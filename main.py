@@ -6,6 +6,26 @@ root.title('Výpočet BMI')
 root.geometry('250x250')
 root.resizable(False, False)
 
+# Functions
+def calculate_bmi(weight, height):
+    text_result = ''
+    bmi = round(float(weight) / float(height)**2)
+    if bmi < 18.5:
+        text_result = 'podváha'
+    elif bmi < 24.9:
+        text_result = 'normální'
+    elif bmi < 29.9:
+        text_result = 'nadváha'
+    elif bmi < 34.9:
+        text_result = 'obezita'
+    elif bmi >= 34.9:
+        text_result = 'extrémní obezita'
+
+    # Results to labels
+    label_user_result_1['text'] = bmi
+    label_user_result_2['text'] = text_result
+
+
 # General Label
 label_general = Label(root, text='Výpočet BMI')
 label_general.grid(row=0, column=1)
@@ -26,26 +46,26 @@ entry_height.grid(row=2, column=1)
 
 # Button
 
-button = Button(root, text='Vypočítat')
+button = Button(root, text='Vypočítat', command=lambda:calculate_bmi(entry_weight.get(),entry_height.get()))
 button.grid(row=3, column=1)
 
 # Result section
 label_result1 = Label(root, text='Číselný výsledek')
 label_result1.grid(row=4, column=0)
 
-label_user_result_1 = Label(root, text='DOPLNIT')
+label_user_result_1 = Label(root)
 label_user_result_1.grid(row=4, column=1)
 
 label_result2 = Label(root, text='Textový výsledek')
 label_result2.grid(row=5, column=0)
 
-label_user_result_2 = Label(root, text='DOPLNIT')
+label_user_result_2 = Label(root)
 label_user_result_2.grid(row=5, column=1)
 
 label_count_text = Label(root, text='Počet uživatelů:')
 label_count_text.grid(row=6, column=0)
 
-label_count_number = Label(root, 'DOPLNIT')
+label_count_number = Label(root, text='DOPLNIT')
 label_count_number.grid(row=6, column=1)
 
 
