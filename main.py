@@ -29,6 +29,24 @@ entry_height.grid(row=2, column=1)
 button = Button(root, text='Vypočítat')
 button.grid(row=3, column=1)
 
+# Result section
+label_result1 = Label(root, text='Číselný výsledek')
+label_result1.grid(row=4, column=0)
+
+label_user_result_1 = Label(root, text='DOPLNIT')
+label_user_result_1.grid(row=4, column=1)
+
+label_result2 = Label(root, text='Textový výsledek')
+label_result2.grid(row=5, column=0)
+
+label_user_result_2 = Label(root, text='DOPLNIT')
+label_user_result_2.grid(row=5, column=1)
+
+label_count_text = Label(root, text='Počet uživatelů:')
+label_count_text.grid(row=6, column=0)
+
+label_count_number = Label(root, 'DOPLNIT')
+label_count_number.grid(row=6, column=1)
 
 
 
